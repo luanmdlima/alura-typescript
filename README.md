@@ -1,2 +1,3 @@
 # alura-typescript
-Repositório dos cursos de TypeScript do Alura.
+
+Repositório da Formação TypeScript do Alura.

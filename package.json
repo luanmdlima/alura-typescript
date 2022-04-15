@@ -1,0 +1,22 @@
+{
+  "name": "typescript",
+  "version": "1.0.0",
+  "description": "Repositório da Formação TypeScript do Alura.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luanmdlima/alura-typescript.git"
+  },
+  "author": "Luan M. D. Lima",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luanmdlima/alura-typescript/issues"
+  },
+  "homepage": "https://github.com/luanmdlima/alura-typescript#readme",
+  "devDependencies": {
+    "typescript": "^4.6.3"
+  }
+}
