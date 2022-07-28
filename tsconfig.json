@@ -1,10 +1,10 @@
 {
-  "compilerOptions": {
-    "target": "ES6",
-    "outDir": "dist/js",
-    "noEmitOnError": true,
-    "noImplicitAny": true
-  },
-  "include": ["app/**/*"],
-  "exclude": ["node_modules"]
+	"compilerOptions": {
+		"target": "ES6",
+		"outDir": "dist/js",
+		"noEmitOnError": true,
+		"noImplicitAny": true
+	},
+	"include": ["app/**/*"],
+	"exclude": ["node_modules"]
 }

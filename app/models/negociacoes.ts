@@ -1,15 +1,15 @@
 import { Negociacao } from "./negociacao.js";
 
 export class Negociacoes {
-  private _lista: Negociacao[] = [];
+	private _lista: Negociacao[] = [];
 
-  constructor() {}
+	constructor() {}
 
-  adiciona(negociacao: Negociacao): void {
-    this._lista.push(negociacao);
-  }
+	adiciona(negociacao: Negociacao): void {
+		this._lista.push(negociacao);
+	}
 
-  get lista(): readonly Negociacao[] {
-    return this._lista;
-  }
+	get lista(): readonly Negociacao[] {
+		return this._lista;
+	}
 }
