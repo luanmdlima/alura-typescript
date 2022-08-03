@@ -5,7 +5,7 @@ export class MessageView extends View<string> {
 		super(selector);
 	}
 
-	public template(model: string): string {
+	protected template(model: string): string {
 		return `<p class="alert alert-info">${model}</p>`;
 	}
 }

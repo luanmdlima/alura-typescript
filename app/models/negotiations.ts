@@ -3,9 +3,7 @@ import { Negotiation } from "./negotiation.js";
 export class Negotiations {
 	private _list: Negotiation[] = [];
 
-	constructor() {}
-
-	add(negotiation: Negotiation): void {
+	public add(negotiation: Negotiation): void {
 		this._list.push(negotiation);
 	}
 

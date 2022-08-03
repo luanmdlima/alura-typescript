@@ -6,7 +6,7 @@ export class NegotiationsView extends View<Negotiations> {
 		super(selector);
 	}
 
-	public template(model: Negotiations): string {
+	protected template(model: Negotiations): string {
 		return `
             <table class="table table-hover table-bordered">
                 <thead>

@@ -2,6 +2,7 @@ import { Negotiation } from "../models/negotiation.js";
 import { Negotiations } from "../models/negotiations.js";
 import { MessageView } from "../views/message-view.js";
 import { NegotiationsView } from "../views/negotiations-view.js";
+import { WeekDays } from "../enums/week-days.js";
 
 export class NegotiationController {
 	private inputDate: HTMLInputElement;
@@ -18,16 +19,21 @@ export class NegotiationController {
 		this.negotiationsView.update(this.negotiations);
 	}
 
-	add(): void {
+	public add(): void {
 		const negotiation = this.createNegotiation();
-		this.negotiations.add(negotiation);
-		this.negotiationsView.update(this.negotiations);
-		this.messageView.update("Negotiation successfully included!");
-		this.cleanForm();
-		console.log(this.negotiations);
+		if (this.isBusinessDay(negotiation.date)) {
+			this.negotiations.add(negotiation);
+			this.updateView();
+			this.cleanForm();
+			console.log(this.negotiations);
+		} else {
+			this.messageView.update(
+				"New negotiations may only be made on business days!"
+			);
+		}
 	}
 
-	createNegotiation(): Negotiation {
+	private createNegotiation(): Negotiation {
 		const exp = /-/g;
 		const negotiation = new Negotiation(
 			new Date(this.inputDate.value.replace(exp, "/")),
@@ -37,10 +43,20 @@ export class NegotiationController {
 		return negotiation;
 	}
 
-	cleanForm(): void {
+	private cleanForm(): void {
 		this.inputDate.value = "";
 		this.inputQuantity.value = "";
 		this.inputValue.value = "";
 		this.inputDate.focus();
+	}
+
+	private updateView(): void {
+		this.negotiationsView.update(this.negotiations);
+		this.messageView.update("Negotiation successfully included!");
+	}
+	private isBusinessDay(date: Date): boolean {
+		return (
+			date.getDay() !== WeekDays.SUNDAY && date.getDay() !== WeekDays.SATURDAY
+		);
 	}
 }
