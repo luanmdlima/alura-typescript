@@ -3,28 +3,28 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>Negociações</title>
+		<title>Negotiotions</title>
 		<link rel="stylesheet" href="css/bootstrap.css" />
 	</head>
 
 	<body class="container">
-		<h1 class="text-center">Negociações</h1>
+		<h1 class="text-center">Negotiations</h1>
 
 		<div id="mensagemView"></div>
 
 		<form class="form">
 			<div class="form-group">
-				<label for="data">Data</label>
-				<input type="date" id="data" class="form-control" required autofocus />
+				<label for="date">Date</label>
+				<input type="date" id="date" class="form-control" required autofocus />
 			</div>
 
 			<div class="form-group">
-				<label for="quantidade">Quantidade</label>
+				<label for="quantity">Quantity</label>
 				<input
 					type="number"
 					min="1"
 					step="1"
-					id="quantidade"
+					id="quantity"
 					class="form-control"
 					value="1"
 					required
@@ -32,9 +32,9 @@
 			</div>
 
 			<div class="form-group">
-				<label for="valor">Valor</label>
+				<label for="value">Value</label>
 				<input
-					id="valor"
+					id="value"
 					type="number"
 					class="form-control"
 					min="0.01"
@@ -44,11 +44,12 @@
 				/>
 			</div>
 
-			<button class="btn btn-primary" type="submit">Incluir</button>
+			<button class="btn btn-primary" type="submit">Include</button>
 		</form>
 		<br />
 		<br />
+		<div id="negotiationsView"></div>
 
-		<script src="./js/views/app.js" type="module"></script>
+		<script src="./js/app.js" type="module"></script>
 	</body>
 </html>
