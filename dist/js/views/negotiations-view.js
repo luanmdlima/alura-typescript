@@ -1,6 +1,7 @@
-export class NegotiationsView {
+import { View } from "./view.js";
+export class NegotiationsView extends View {
     constructor(selector) {
-        this.element = document.querySelector(selector);
+        super(selector);
     }
     template(model) {
         return `
@@ -27,8 +28,5 @@ export class NegotiationsView {
             .join("")}    
                 </tbody>
             </table>`;
-    }
-    update(model) {
-        this.element.innerHTML = this.template(model);
     }
 }
