@@ -4,6 +4,11 @@ export class Negotiation {
         this.quantity = quantity;
         this.value = value;
     }
+    static createFrom(dateString, quantityString, valueString) {
+        const exp = /-/g;
+        const negotiation = new Negotiation(new Date(dateString.replace(exp, "/")), parseInt(quantityString), parseFloat(valueString));
+        return negotiation;
+    }
     get date() {
         return new Date(this._date);
     }

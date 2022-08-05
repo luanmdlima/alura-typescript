@@ -20,7 +20,11 @@ export class NegotiationController {
 	}
 
 	public add(): void {
-		const negotiation = this.createNegotiation();
+		const negotiation = Negotiation.createFrom(
+			this.inputDate.value,
+			this.inputQuantity.value,
+			this.inputValue.value
+		);
 		if (this.isBusinessDay(negotiation.date)) {
 			this.negotiations.add(negotiation);
 			this.updateView();
@@ -33,15 +37,7 @@ export class NegotiationController {
 		}
 	}
 
-	private createNegotiation(): Negotiation {
-		const exp = /-/g;
-		const negotiation = new Negotiation(
-			new Date(this.inputDate.value.replace(exp, "/")),
-			parseInt(this.inputQuantity.value),
-			parseFloat(this.inputValue.value)
-		);
-		return negotiation;
-	}
+	/* private createNegotiation(): Negotiation {} */
 
 	private cleanForm(): void {
 		this.inputDate.value = "";
