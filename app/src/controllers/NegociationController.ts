@@ -3,7 +3,8 @@ import { Negotiations } from "../models/Negotiations.js";
 import { MessageView } from "../views/MessageView.js";
 import { NegotiationsView } from "../views/NegotiationsView.js";
 import { WeekDays } from "../enums/WeekDays.js";
-import { logExecutioTime } from "../decorators/logExecutionTIme.js";
+import { logExecutioTime } from "../decorators/logExecutionTime.js";
+import { inspect } from "../decorators/inspect.js";
 
 export class NegotiationController {
 	private inputDate: HTMLInputElement;
@@ -22,7 +23,8 @@ export class NegotiationController {
 		this.negotiationsView.update(this.negotiations);
 	}
 
-	@logExecutioTime()
+	@inspect()
+	@logExecutioTime(true)
 	public add(): void {
 		const negotiation = Negotiation.createFrom(
 			this.inputDate.value,
@@ -33,7 +35,7 @@ export class NegotiationController {
 			this.negotiations.add(negotiation);
 			this.updateView();
 			this.cleanForm();
-			console.log(this.negotiations);
+			// console.log(this.negotiations);
 		} else {
 			this.messageView.update(
 				"New negotiations may only be made on business days!"
