@@ -25,7 +25,6 @@ export class NegotiationController {
             this.messageView.update("New negotiations may only be made on business days!");
         }
     }
-    /* private createNegotiation(): Negotiation {} */
     cleanForm() {
         this.inputDate.value = "";
         this.inputQuantity.value = "";
