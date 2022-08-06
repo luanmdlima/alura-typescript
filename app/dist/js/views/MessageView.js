@@ -1,4 +1,4 @@
-import { View } from "./view.js";
+import { View } from "./View.js";
 export class MessageView extends View {
     constructor(selector) {
         super(selector);

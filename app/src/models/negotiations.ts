@@ -1,4 +1,4 @@
-import { Negotiation } from "./negotiation.js";
+import { Negotiation } from "./Negotiation.js";
 
 export class Negotiations {
 	private _list: Negotiation[] = [];

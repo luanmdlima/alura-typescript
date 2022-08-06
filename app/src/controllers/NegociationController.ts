@@ -1,8 +1,9 @@
-import { Negotiation } from "../models/negotiation.js";
-import { Negotiations } from "../models/negotiations.js";
-import { MessageView } from "../views/message-view.js";
-import { NegotiationsView } from "../views/negotiations-view.js";
-import { WeekDays } from "../enums/week-days.js";
+import { Negotiation } from "../models/Negotiation.js";
+import { Negotiations } from "../models/Negotiations.js";
+import { MessageView } from "../views/MessageView.js";
+import { NegotiationsView } from "../views/NegotiationsView.js";
+import { WeekDays } from "../enums/WeekDays.js";
+import { logExecutioTime } from "../decorators/logExecutionTIme.js";
 
 export class NegotiationController {
 	private inputDate: HTMLInputElement;
@@ -21,6 +22,7 @@ export class NegotiationController {
 		this.negotiationsView.update(this.negotiations);
 	}
 
+	@logExecutioTime()
 	public add(): void {
 		const negotiation = Negotiation.createFrom(
 			this.inputDate.value,

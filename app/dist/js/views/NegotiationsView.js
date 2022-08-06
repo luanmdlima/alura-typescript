@@ -1,4 +1,4 @@
-import { View } from "./view.js";
+import { View } from "./View.js";
 export class NegotiationsView extends View {
     constructor(selector) {
         super(selector);
