@@ -8,8 +8,8 @@ export abstract class View<T> {
 		this.element = document.querySelector(selector) as HTMLElement;
 	}
 
-	@inspect()
-	@logExecutioTime()
+	/* @inspect()
+	@logExecutioTime() */
 	public update(model: T): void {
 		let template = this.template(model);
 		this.element.innerHTML = template;

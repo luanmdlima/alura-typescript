@@ -5,10 +5,14 @@ import { NegotiationsView } from "../views/NegotiationsView.js";
 import { WeekDays } from "../enums/WeekDays.js";
 import { logExecutioTime } from "../decorators/logExecutionTime.js";
 import { inspect } from "../decorators/inspect.js";
+import { domInject } from "../decorators/domInject.js";
 
 export class NegotiationController {
+	// @domInject("#date")
 	private inputDate: HTMLInputElement;
+	// @domInject("#quantity")
 	private inputQuantity: HTMLInputElement;
+	// @domInject("#value")
 	private inputValue: HTMLInputElement;
 	private negotiations = new Negotiations();
 	private negotiationsView = new NegotiationsView("#negotiationsView");
@@ -24,7 +28,7 @@ export class NegotiationController {
 	}
 
 	@inspect()
-	@logExecutioTime(true)
+	@logExecutioTime()
 	public add(): void {
 		const negotiation = Negotiation.createFrom(
 			this.inputDate.value,
