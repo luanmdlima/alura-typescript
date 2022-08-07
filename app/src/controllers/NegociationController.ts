@@ -27,8 +27,8 @@ export class NegotiationController {
 		this.negotiationsView.update(this.negotiations);
 	}
 
-	@inspect()
-	@logExecutioTime()
+	/* @inspect()
+	@logExecutioTime() */
 	public add(): void {
 		const negotiation = Negotiation.createFrom(
 			this.inputDate.value,
@@ -39,7 +39,7 @@ export class NegotiationController {
 			this.negotiations.add(negotiation);
 			this.updateView();
 			this.cleanForm();
-			// console.log(this.negotiations);
+			// console.log(negotiation.toString());
 		} else {
 			this.messageView.update(
 				"New negotiations may only be made on business days!"

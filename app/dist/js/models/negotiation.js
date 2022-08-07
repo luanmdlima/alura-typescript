@@ -15,4 +15,12 @@ export class Negotiation {
     get volume() {
         return this.value * this.quantity;
     }
+    isEqual(other) {
+        return (this.date.getDate() === other.date.getDate() &&
+            this.date.getMonth() === other.date.getMonth() &&
+            this.date.getFullYear() === other.date.getFullYear());
+    }
+    toString() {
+        return `Date: ${this.date.getDate()}/${this.date.getMonth() + 1}/${this.date.getFullYear()} --- Quantity: ${this.quantity} ----  Value: ${this.value}`;
+    }
 }
